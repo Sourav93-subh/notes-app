@@ -21,6 +21,11 @@ models.Base.metadata.create_all(bind=engine)
 
 # Initialize FastAPI app
 app = FastAPI()
+@app.get("/")
+def home():
+    return {
+        "message": "Notes API is running successfully"
+    }
 
 # JWT Security
 security = HTTPBearer()
